@@ -5,23 +5,19 @@ import styles from './App.module.css';
 import { getData } from './api';
 
 class App extends Component {
-
   state = {
-    data :{},
-  }
+    data: {},
+  };
 
   async componentDidMount() {
     const newData = await getData();
-    this.setState({data:newData});
-    console.log('====================================');
-    console.log(state);
-    console.log('====================================');
+    this.setState({ data: newData });
   }
   render() {
     return (
       <div className={styles.container}>
-        <Cards />
-        <Country />
+        <Cards data={this.state.data} />
+        {/* <Country /> */}
       </div>
     );
   }
