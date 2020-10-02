@@ -5,4 +5,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+.header {
+  font-size: 3rem;
+  font-family: 'Lucida Sans', sans-serif;
+  color: #3f3f3f;
 }

@@ -5,7 +5,10 @@ import cx from 'classnames';
 
 import styles from './Cards.module.css';
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const Cards = ({
+  data: { confirmed, recovered, deaths, lastUpdate },
+  country,
+}) => {
   if (!confirmed) {
     return <p>Loading ...</p>;
   }
@@ -34,7 +37,11 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color='textSecondary'>
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant='body2'> Number of active cases </Typography>
+            <Typography variant='body2'>
+              {' '}
+              Number of active cases in
+              <b> {country === '' ? 'global' : country}</b>
+            </Typography>
           </CardContent>
         </Grid>
         <Grid
@@ -59,7 +66,10 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color='textSecondary'>
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant='body2'>Number of recoveries cases</Typography>
+            <Typography variant='body2'>
+              Number of recoveries cases in{' '}
+              <b> {country === '' ? 'global' : country}</b>{' '}
+            </Typography>
           </CardContent>
         </Grid>
         <Grid
@@ -84,7 +94,11 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color='textSecondary'>
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant='body2'> Number of deaths cases </Typography>
+            <Typography variant='body2'>
+              {' '}
+              Number of deaths cases in{' '}
+              <b> {country === '' ? 'global' : country}</b>{' '}
+            </Typography>
           </CardContent>
         </Grid>
       </Grid>
