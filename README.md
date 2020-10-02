@@ -1,4 +1,5 @@
-(/screen.png)
+![GitHub Logo](/screen.png)
+
 
 this app created using reactjs and some packages axios ,count-up ,classnames
 
