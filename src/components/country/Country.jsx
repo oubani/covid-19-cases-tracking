@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NativeSelect, FormControl, StylesProvider } from '@material-ui/core';
+import { NativeSelect, FormControl } from '@material-ui/core';
 import { getCountries } from '../../api';
 
 import styles from './Country.module.css';
